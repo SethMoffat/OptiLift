@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen';
+import SettingScreen from './screens/SettingScreen';
+import Navbar from './components/Navbar';
 import './App.css';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
+        <Routes>
+        <Route path="/" element={<HomeScreen darkMode={darkMode} />} exact />
+          <Route path="/settings" element={<SettingScreen darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        </Routes>
+        <Navbar />
+      </div>
+    </Router>
   );
 }
 

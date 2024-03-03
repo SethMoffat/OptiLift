@@ -1,0 +1,34 @@
+.HomeScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .HomeScreen h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+  }
+  
+  .HomeScreen button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .HomeScreen button:hover {
+    background-color: #0056b3;
+  }
