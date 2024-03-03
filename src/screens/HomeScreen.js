@@ -11,8 +11,12 @@ const HomeScreen = ({ darkMode }) => {
     <div className={`HomeScreen ${darkMode ? 'dark-mode' : ''}`}>
       <div style={{ textAlign: 'center' }}>
         <h1>Opti-Lift</h1>
-        <button style={{ padding: '20px', fontSize: '20px', margin: '10px' }}>Google business accounts</button>
-        <button style={{ padding: '20px', fontSize: '20px', margin: '10px' }}>Add Client</button>
+        <Link to="/accounts" style={{ textDecoration: 'none' }}>
+          <button style={{ padding: '20px', fontSize: '20px', margin: '10px' }}>Google business accounts</button>
+        </Link>
+        <Link to="/new-client" style={{ textDecoration: 'none' }}> {/* Add Link to NewClientScreen */}
+          <button style={{ padding: '20px', fontSize: '20px', margin: '10px' }}>Add Client</button>
+        </Link>
         <Link to="/settings" style={{ textDecoration: 'none' }}>
           <button style={{ padding: '20px', fontSize: '20px', margin: '10px' }}>Settings</button>
         </Link>
