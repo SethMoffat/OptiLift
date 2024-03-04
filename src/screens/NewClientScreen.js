@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import db from '../firebase';
+import { collection, addDoc } from 'firebase/firestore';
 import './NewClientScreen.css';
 
 function NewClientScreen() {
@@ -9,22 +10,22 @@ function NewClientScreen() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     if (!clientName || !clientEmail) {
       setError('All fields are required');
       return;
     }
-
-    const db = getFirestore();
+  
     try {
       await addDoc(collection(db, 'clients'), {
         name: clientName,
         email: clientEmail,
       });
-
+  
       setClientName('');
       setClientEmail('');
       setError('');
+      alert('Data sent'); // Show a success message
     } catch (err) {
       setError('Failed to add client');
     }
